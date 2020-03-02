@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection
 {
-    //Hello everyone, this is my dependency injectyion pproject it imitates a school log book
+    //Hello everyone, this is my dependency injection project. it imitates a school log book
    
     // dependency injection involves three differet types of classes
     //client class
     //service class
     //injector class
-    // we have three types of dependency injector
+    // we have three types of dependency injectors
     //fields/property injector
    //constructor injector
    // setter injector
@@ -27,9 +27,14 @@ namespace DependencyInjection
         public SchoolLog(IService service) 
         {
             this._service = service;
-            this._service.GetFirstName();
-            this._service.GetLastName();
+            GetInfo(_service);
+        }  
+        public void GetInfo(IService _service) 
+        {
+            _service.GetFirstName();
+            _service.GetLastName();
         }
+          
     }
     //interface for the service class
     public interface IService
